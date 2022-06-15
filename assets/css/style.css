@@ -1,0 +1,17 @@
+/* Utilitarios */
+@import "utilitarios/reset.css";
+@import "utilitarios/animations.css";
+@import "utilitarios/colors.css";
+
+/* Componentes */
+@import "componentes/navbar.css";
+@import "componentes/formulário.css";
+@import "componentes/popout.css";
+
+/* Pages */
+@import "pages/login.css";
+@import "pages/menu.css";
+@import "pages/option.css";
+@import "pages/addproduto.css";
+@import "pages/adddescongelacao.css";
+@import "pages/descongelacaotable.css";

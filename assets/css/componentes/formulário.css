@@ -1,0 +1,123 @@
+.formulario-items {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.input {
+  padding: 16px;
+  border: 2px solid #e1e1e1;
+  border-radius: 5px;
+  justify-self: stretch;
+  align-self: stretch;
+  width: auto;
+}
+
+.btn-submit {
+  border-radius: 5px;
+  padding: 16px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  border: 2px solid rgb(127, 255, 185);
+  background-color: rgb(127, 255, 191);
+  font-size: 1.125rem;
+  cursor: pointer;
+  width: auto;
+}
+
+.btn-left {
+  border-radius: 5px;
+  padding: 16px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  border: 2px solid rgb(255, 127, 127);
+  background-color: rgb(255, 153, 127);
+  font-size: 1.125rem;
+  text-align: center;
+  cursor: pointer;
+  width: auto;
+}
+
+.label {
+  color: #fff;
+  font-weight: 600;
+  font-size: 1.25rem;
+  letter-spacing: 0.5px;
+}
+
+.formulario-container-pesquisa {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  gap: 40px;
+  justify-content: center;
+  align-items: stretch;
+  background-color: var(--cor-primaria-1);
+  padding: 60px;
+  border-radius: 10px;
+}
+
+.search {
+  padding: 16px 16px 16px 40px;
+  border: 2px solid #e1e1e1;
+  border-radius: 5px;
+  justify-self: stretch;
+  align-self: stretch;
+  width: auto;
+  position: relative;
+}
+
+.search::before {
+  content: "";
+  display: block;
+  position: absolute;
+  background: url("../../img/search.svg") center center no-repeat;
+  width: 48px;
+  height: 48px;
+}
+
+.table {
+  background-color: var(--cor-primaria-4);
+  padding: 30px;
+  border-radius: 10px;
+  color: #e1e1e1;
+}
+
+.th {
+  padding: 5px 20px;
+  border-bottom: 4px solid var(--cor-primaria-1);
+  text-align: center;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.td {
+  padding: 5px 20px;
+  text-align: center;
+}
+
+@media (max-width: 800px) {
+  .input {
+    padding: 8px;
+  }
+
+  .label {
+    font-size: 1rem;
+  }
+
+  .btn-left {
+    padding: 8px;
+    font-size: 1rem;
+  }
+
+  .btn-submit {
+    padding: 8px;
+    font-size: 1rem;
+  }
+  .formulario-container-pesquisa {
+    margin-left: 700px;
+  }
+}

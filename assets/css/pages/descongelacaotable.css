@@ -1,0 +1,11 @@
+.menu-table {
+  margin: 50px 0px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.active {
+  background-color: rgb(167, 255, 116);
+  border: 2px solid rgb(116, 255, 123);
+}

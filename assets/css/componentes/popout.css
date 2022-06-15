@@ -1,0 +1,25 @@
+.status-confirm {
+  border: 2px solid rgb(127, 255, 185);
+  background-color: rgb(127, 255, 191);
+  color: rgb(2, 63, 33);
+  padding: 15px 40px;
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+
+.status-confirm b {
+  color: rgb(7, 75, 41);
+}
+
+.status-error {
+  border: 2px solid rgb(255, 127, 127);
+  background-color: rgb(255, 153, 127);
+  color: rgb(0, 0, 0);
+  padding: 15px 40px;
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+
+.status-error b {
+  color: rgb(0, 0, 0);
+}
