@@ -30,70 +30,72 @@
   </header>
 
   <main class="formulario-bg-produto">
-  <h1 class="fadeInUp">Remover Descongelação</h1>
-  <div class="menu-table fadeInUp">
-    <a class="btn-submit" href="removedescongelacaoE.php">Entrada</a>
-    <a class="btn-submit active" href="removedescongelacaoS.php">Saida</a>
-    <a class="btn-submit" href="removedescongelacaoE_S.php">Entrada/Saida</a>
-  </div>
-    <form class="formulario-container-pesquisa fadeInUp">
-      <input class="search" name="busca" value="<?php if(isset($_GET['busca'])) echo $_GET['busca']; ?>" placeholder="Digite algo para pesquisar" type="text">
-      <!-- <button type="submit">Pesquisar</button> -->
-      <table class="table">
-        <tr>
-          <th class="th">ID</th>
-          <th class="th">Produto</th>
-          <th class="th">DataEntrada</th>
-          <th class="th">Câmara</th>
-          <th class="th">Lugar</th>
-          <th class="th">Temperatura</th>
-          <th class="th">Kg</th>
-          <th class="th">...</th>
-        </tr>
-        <?php
-          if (!isset($_GET['busca'])) {
-        ?>
-        <?php
-          } else {
-            $pesquisa = mysqli_real_escape_string($conexao, $_GET['busca']);
-            $sql_code = "SELECT * FROM descongelacaosaida WHERE id LIKE '%$pesquisa%' 
-            OR produto LIKE '%$pesquisa%'
-            OR dataSaida LIKE '%$pesquisa%' 
-            OR camara LIKE '%$pesquisa%' 
-            OR lugar LIKE '%$pesquisa%' 
-            OR temperatura LIKE '%$pesquisa%' 
-            OR kg LIKE '%$pesquisa%'";
-            $sql_query = mysqli_query($conexao, $sql_code) or die("ERRO ao consultar! " . $mysqli->error);  
-            if ($sql_query->num_rows == 0) {
-        ?>
-        <tr>
-          <td class="td" colspan="10">Nenhum resultado encontrado...</td>
-        </tr>
-        <?php
-            } else {
-              while($dados = $sql_query->fetch_assoc()) {
-        ?>
+  <div class="tabela-produto">
+    <h1 class="fadeInUp">Remover Descongelação</h1>
+    <div class="menu-table fadeInUp">
+      <a class="btn-submit" href="removedescongelacaoE.php">Entrada</a>
+      <a class="btn-submit active" href="removedescongelacaoS.php">Saida</a>
+      <a class="btn-submit" href="removedescongelacaoE_S.php">Entrada/Saida</a>
+    </div>
+      <form class="formulario-container-pesquisa fadeInUp">
+        <input class="search" name="busca" value="<?php if(isset($_GET['busca'])) echo $_GET['busca']; ?>" placeholder="Digite algo para pesquisar" type="text">
+        <!-- <button type="submit">Pesquisar</button> -->
+        <table class="table">
           <tr>
-            <td class="td"><?php echo $dados['id']; ?></td>
-            <td class="td"><?php echo $dados['produto']; ?></td>
-            <td class="td"><?php echo $dados['dataSaida']; ?></td>
-            <td class="td"><?php echo $dados['camara']; ?></td>
-            <td class="td"><?php echo $dados['lugar']; ?></td>
-            <td class="td"><?php echo $dados['temperatura']; ?></td>
-            <td class="td"><?php echo $dados['kg']; ?></td>
-            <td class="td"><a class="icon" href="removerS.php?id=<?php echo $dados['id'];?>" title="Deletar"><img src="../assets/img/close.svg" alt=""></a></td>
+            <th class="th">ID</th>
+            <th class="th">Produto</th>
+            <th class="th">DataEntrada</th>
+            <th class="th">Câmara</th>
+            <th class="th">Lugar</th>
+            <th class="th">Temperatura</th>
+            <th class="th">Kg</th>
+            <th class="th">...</th>
           </tr>
-        <?php
+          <?php
+            if (!isset($_GET['busca'])) {
+          ?>
+          <?php
+            } else {
+              $pesquisa = mysqli_real_escape_string($conexao, $_GET['busca']);
+              $sql_code = "SELECT * FROM descongelacaosaida WHERE id LIKE '%$pesquisa%' 
+              OR produto LIKE '%$pesquisa%'
+              OR dataSaida LIKE '%$pesquisa%' 
+              OR camara LIKE '%$pesquisa%' 
+              OR lugar LIKE '%$pesquisa%' 
+              OR temperatura LIKE '%$pesquisa%' 
+              OR kg LIKE '%$pesquisa%'";
+              $sql_query = mysqli_query($conexao, $sql_code) or die("ERRO ao consultar! " . $mysqli->error);  
+              if ($sql_query->num_rows == 0) {
+          ?>
+          <tr>
+            <td class="td" colspan="10">Nenhum resultado encontrado...</td>
+          </tr>
+          <?php
+              } else {
+                while($dados = $sql_query->fetch_assoc()) {
+          ?>
+            <tr>
+              <td class="td"><?php echo $dados['id']; ?></td>
+              <td class="td"><?php echo $dados['produto']; ?></td>
+              <td class="td"><?php echo $dados['dataSaida']; ?></td>
+              <td class="td"><?php echo $dados['camara']; ?></td>
+              <td class="td"><?php echo $dados['lugar']; ?></td>
+              <td class="td"><?php echo $dados['temperatura']; ?></td>
+              <td class="td"><?php echo $dados['kg']; ?></td>
+              <td class="td"><a class="icon" href="removerS.php?id=<?php echo $dados['id'];?>" title="Deletar"><img src="../assets/img/close.svg" alt=""></a></td>
+            </tr>
+          <?php
+              }
             }
-          }
-        ?>
-        <?php
-        } ?>
-      </table>
-      <div class="formulario-items">
-        <a class="btn-left" href="/VividFood/menu.php">Sair</a>
-      </div>
-    </form>
+          ?>
+          <?php
+          } ?>
+        </table>
+        <div class="formulario-items">
+          <a class="btn-left" href="/VividFood/menu.php">Sair</a>
+        </div>
+      </form>
+    </div>
   </main>
 </body>
 

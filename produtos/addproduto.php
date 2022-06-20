@@ -30,82 +30,84 @@
   </header>
 
   <main class="formulario-bg-produto">
-    <h1 class="fadeInUp">Adicionar Produto</h1>
-    <?php if(isset($_SESSION["status_cadastro"])):?>
-    <div class="status-confirm fadeInUp">
-      <p><b><?php echo($_SESSION["alimento"]);?></b> salvo com sucesso!</p>
+    <div class="tabela-produto">
+      <h1 class="fadeInUp">Adicionar Produto</h1>
+      <?php if(isset($_SESSION["status_cadastro"])):?>
+      <div class="status-confirm fadeInUp">
+        <p><b><?php echo($_SESSION["alimento"]);?></b> salvo com sucesso!</p>
+      </div>
+      <?php
+        endif;
+        unset($_SESSION["status_cadastro"]);
+      ?>
+
+      <?php if(isset($_SESSION["PLU_falso"])):?>
+      <div class="status-error fadeInUp">
+        <p><b>ERROR</b> PLU não registrado</p>
+      </div>
+      <?php
+        endif;
+        unset($_SESSION["PLU_falso"]);
+      ?>
+      <form class="formulario-container-produto fadeInUp" action="enviar.php" method="post">
+        <div class="formulario-items">
+          <label class="label" for="plu">PLU:</label>
+          <input class="input" type="text" id="plu" name="plu">
+        </div>
+
+        <div class="formulario-items">
+          <label class="label" for="pedido">Pedido:</label>
+          <input class="input" type="text" id="pedido" name="pedido">
+        </div>
+
+        <div class="formulario-items">
+          <label class="label" for="lote">Lote:</label>
+          <input class="input" type="text" id="lote" name="lote">
+        </div>
+
+        <div class="formulario-items">
+          <label class="label" for="datafabrica">Data Fabricação:</label>
+          <input class="input" type="date" id="datafabrica" name="datafabrica">
+        </div>
+
+        <div class="formulario-items">
+          <label class="label" for="datavalidade">Data Validade:</label>
+          <input class="input" type="date" id="datavalidade" name="datavalidade">
+        </div>
+
+        <div class="formulario-items">
+          <label class="label" for="encomenda">Encomenda:</label>
+          <input class="input" type="text" id="encomenda" name="encomenda">
+        </div>
+
+        <div class="formulario-items">
+          <label class="label" for="stock">Stock:</label>
+          <input class="input" type="text" id="stock" name="stock">
+        </div>
+
+        <div class="formulario-items">
+          <label class="label" for="cuvetes">Cuvetes:</label>
+          <input class="input" type="text" id="cuvetes" name="cuvetes">
+        </div>
+
+        <div class="formulario-items">
+          <label class="label" for="empresa">Empresa:</label>
+          <input class="input" type="text" id="empresa" name="empresa">
+        </div>
+
+        <div class="formulario-items">
+          <h1>LOGO</h1>
+        </div>
+
+        <div class="formulario-items">
+          <button class="btn-submit" type="submit" id="enviar" name="enviar">Enviar</button>
+        </div>
+
+        <div class="formulario-items">
+          <a class="btn-left" href="/VividFood/menu.php">Sair</a>
+        </div>
+      </form>
     </div>
-    <?php
-      endif;
-      unset($_SESSION["status_cadastro"]);
-    ?>
-
-    <?php if(isset($_SESSION["PLU_falso"])):?>
-    <div class="status-error fadeInUp">
-      <p><b>ERROR</b> PLU não registrado</p>
-    </div>
-    <?php
-      endif;
-      unset($_SESSION["PLU_falso"]);
-    ?>
-    <form class="formulario-container-produto fadeInUp" action="enviar.php" method="post">
-      <div class="formulario-items">
-        <label class="label" for="plu">PLU:</label>
-        <input class="input" type="text" id="plu" name="plu">
-      </div>
-
-      <div class="formulario-items">
-        <label class="label" for="pedido">Pedido:</label>
-        <input class="input" type="text" id="pedido" name="pedido">
-      </div>
-
-      <div class="formulario-items">
-        <label class="label" for="lote">Lote:</label>
-        <input class="input" type="text" id="lote" name="lote">
-      </div>
-
-      <div class="formulario-items">
-        <label class="label" for="datafabrica">Data Fabricação:</label>
-        <input class="input" type="date" id="datafabrica" name="datafabrica">
-      </div>
-
-      <div class="formulario-items">
-        <label class="label" for="datavalidade">Data Validade:</label>
-        <input class="input" type="date" id="datavalidade" name="datavalidade">
-      </div>
-
-      <div class="formulario-items">
-        <label class="label" for="encomenda">Encomenda:</label>
-        <input class="input" type="text" id="encomenda" name="encomenda">
-      </div>
-
-      <div class="formulario-items">
-        <label class="label" for="stock">Stock:</label>
-        <input class="input" type="text" id="stock" name="stock">
-      </div>
-
-      <div class="formulario-items">
-        <label class="label" for="cuvetes">Cuvetes:</label>
-        <input class="input" type="text" id="cuvetes" name="cuvetes">
-      </div>
-
-      <div class="formulario-items">
-        <label class="label" for="empresa">Empresa:</label>
-        <input class="input" type="text" id="empresa" name="empresa">
-      </div>
-
-      <div class="formulario-items">
-        <h1>LOGO</h1>
-      </div>
-
-      <div class="formulario-items">
-        <button class="btn-submit" type="submit" id="enviar" name="enviar">Enviar</button>
-      </div>
-
-      <div class="formulario-items">
-        <a class="btn-left" href="/VividFood/menu.php">Sair</a>
-      </div>
-    </form>
   </main>
 </body>
 

@@ -29,70 +29,72 @@
   </header>
 
   <main class="formulario-bg-descongelacao">
-    <h1 class="fadeInUp">Adicionar Descongelação</h1>
-    <?php if(isset($_SESSION["status_cadastro"])):?>
-    <div class="status-confirm fadeInUp">
-      <p>Salvo com sucesso!</p>
+    <div class="tabela-produto">
+      <h1 class="fadeInUp">Adicionar Descongelação</h1>
+      <?php if(isset($_SESSION["status_cadastro"])):?>
+      <div class="status-confirm fadeInUp">
+        <p>Salvo com sucesso!</p>
+      </div>
+      <?php
+        endif;
+        unset($_SESSION["status_cadastro"]);
+      ?>
+      <form class="formulario-container-descongelacao fadeInUp" action="enviar.php" method="post">
+        <div class="formulario-items">
+          <label class="label" for="produto">Produto:</label>
+          <input class="input" type="text" id="produto" name="produto">
+        </div>
+
+        <div class="formulario-items">
+          <label class="label" for="dataentrada">Data Entrada:</label>
+          <input class="input" type="date" id="dataentrada" name="dataentrada">
+        </div>
+
+        <div class="formulario-items">
+          <label class="label" for="camara">Câmara:</label>
+          <select class="input" name="camara" id="camara">
+            <option value="10">Câmara 10</option>
+            <option value="10A">Câmara 10A</option>
+            <option value="10B">Câmara 10B</option>
+          </select>
+        </div>
+
+        <div class="formulario-items">
+          <label class="label" for="tipo">Tipo:</label>
+          <select class="input" name="tipo" id="tipo">
+            <option value="1">Entrada</option>
+            <option value="0">Saida</option>
+          </select>
+        </div>
+
+        <div class="formulario-items">
+          <label class="label" for="lugar">Lugar:</label>
+          <input class="input" type="text" id="lugar" name="lugar">
+        </div>
+
+        <div class="formulario-items">
+          <label class="label" for="temperatura">Temperatura:</label>
+          <input class="input" type="text" id="temperatura" name="temperatura">
+        </div>
+
+        <div class="formulario-items">
+          <label class="label" for="kg">Kilograma:</label>
+          <input class="input" type="text" id="kg" name="kg">
+        </div>
+
+        <div class="formulario-items">
+          <h1>LOGO</h1>
+        </div>
+
+        <div class="formulario-items">
+          <button class="btn-submit" type="submit" id="enviar" name="enviar">Enviar</button>
+        </div>
+
+        <div class="formulario-items">
+          <a class="btn-left" href="/VividFood/menu.php">Sair</a>
+        </div>
+      </form>
     </div>
-    <?php
-      endif;
-      unset($_SESSION["status_cadastro"]);
-    ?>
-    <form class="formulario-container-descongelacao fadeInUp" action="enviar.php" method="post">
-      <div class="formulario-items">
-        <label class="label" for="produto">Produto:</label>
-        <input class="input" type="text" id="produto" name="produto">
-      </div>
-
-      <div class="formulario-items">
-        <label class="label" for="dataentrada">Data Entrada:</label>
-        <input class="input" type="date" id="dataentrada" name="dataentrada">
-      </div>
-
-      <div class="formulario-items">
-        <label class="label" for="camara">Câmara:</label>
-        <select class="input" name="camara" id="camara">
-          <option value="10">Câmara 10</option>
-          <option value="10A">Câmara 10A</option>
-          <option value="10B">Câmara 10B</option>
-        </select>
-      </div>
-
-      <div class="formulario-items">
-        <label class="label" for="tipo">Tipo:</label>
-        <select class="input" name="tipo" id="tipo">
-          <option value="1">Entrada</option>
-          <option value="0">Saida</option>
-        </select>
-      </div>
-
-      <div class="formulario-items">
-        <label class="label" for="lugar">Lugar:</label>
-        <input class="input" type="text" id="lugar" name="lugar">
-      </div>
-
-      <div class="formulario-items">
-        <label class="label" for="temperatura">Temperatura:</label>
-        <input class="input" type="text" id="temperatura" name="temperatura">
-      </div>
-
-      <div class="formulario-items">
-        <label class="label" for="kg">Kilograma:</label>
-        <input class="input" type="text" id="kg" name="kg">
-      </div>
-
-      <div class="formulario-items">
-        <h1>LOGO</h1>
-      </div>
-
-      <div class="formulario-items">
-        <button class="btn-submit" type="submit" id="enviar" name="enviar">Enviar</button>
-      </div>
-
-      <div class="formulario-items">
-        <a class="btn-left" href="/VividFood/menu.php">Sair</a>
-      </div>
-    </form>
   </main>
 </body>
 
