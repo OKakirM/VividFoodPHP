@@ -8,12 +8,15 @@
 }
 
 .formulario-bg-produto {
-  height: 100vh;
+  background-color: var(--cor-primaria-4);
+}
+
+.tabela-produto {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: var(--cor-primaria-4);
+  height: 100vh;
 }
 
 .formulario-container-produto {
